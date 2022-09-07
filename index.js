@@ -10,15 +10,27 @@
         search: searchTerm
       }  
     });
-    console.log(response.data.results);
+
+    return response.data.results;   
   };
 
     
     const input = document.querySelector('input');
     
     
-    const onInput = event => {
-      fetchData(event.target.value);
+    const onInput = async event => {
+      const games = await fetchData(event.target.value);
+      
+      for (let game of games) {
+        const div = document.createElement('div');
+
+        div.innerHTML = `
+        <img src="${game.background_image}" />
+        <h1>${game.name}</h1>
+        `;
+
+        document.querySelector('#target').appendChild(div);
+      }
     };
     
     input.addEventListener('input', debounce(onInput, 450));
