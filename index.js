@@ -14,7 +14,7 @@ const fetchData = async (searchTerm) => {
   );
  
   
-  console.log(response.data.results);
+  console.log(response.data.results.sort(sortBy('rating', true, parseInt)));
   return response.data.results;
 };
 
@@ -54,3 +54,21 @@ const onInput = async (event) => {
 
 input.addEventListener("input", debounce(onInput, 450));
 
+
+//function to sort results by rating
+const sortBy = (field, reverse, primer) => {
+
+  const key = primer ?
+    function(x) {
+      return primer(x[field])
+    } :
+    function(x) {
+      return x[field]
+    };
+
+  reverse = !reverse ? 1 : -1;
+
+  return function(a, b) {
+    return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
+  }
+}
