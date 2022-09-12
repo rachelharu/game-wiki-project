@@ -5,6 +5,7 @@ const fetchData = async (searchTerm) => {
       headers: {
         "X-RapidAPI-Key": "7813177d35mshc85ddf61935f917p12ead0jsn0e2bfb81f08e",
         "X-RapidAPI-Host": "rawg-video-games-database.p.rapidapi.com",
+         
       },
       params: {
         key: "bb7842b2785541ce8a8dd7522bac4816",
@@ -37,6 +38,11 @@ const resultsWrapper = document.querySelector(".results");
 const onInput = async (event) => {
   const games = await fetchData(event.target.value);
   
+  if (!games.length) {
+    dropdown.classList.remove('is-active');
+    return;
+  }
+
   resultsWrapper.innerHTML = " ";
   dropdown.classList.add("is-active");
   for (let game of games) {
@@ -46,8 +52,12 @@ const onInput = async (event) => {
     option.innerHTML = `
         <img src="${game.background_image}" />
         <h1>${game.name}</h1>
-        
         `;
+      option.addEventListener('click', () => {
+        dropdown.classList.remove("is-active");
+        input.value = game.name;
+        onGameSelect(game);
+      });
 
     resultsWrapper.appendChild(option);
   }
@@ -55,7 +65,8 @@ const onInput = async (event) => {
 
 input.addEventListener("input", debounce(onInput, 450));
 
-//event listener to check if a click was done outside of root if yes it close dropdown with "is-active"
+
+//function to close dropdown menu if user clicks outside root"
 document.addEventListener("click", event => {
   if (!root.contains(event.target)) {
     dropdown.classList.remove('is-active');
@@ -63,7 +74,7 @@ document.addEventListener("click", event => {
 });
 
 
-//function to sort results by rating
+//reusable function to sort results by rating
 const sortBy = (field, reverse, primer) => {
 
   const key = primer ?
@@ -79,4 +90,58 @@ reverse = !reverse ? 1 : -1;
 return function(a, b) {
   return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
 }
-}
+};
+
+
+const onGameSelect = game => {
+
+  console.log(game.genres);
+  
+   document.querySelector("#summary").innerHTML = `
+   <article class="media">
+     <figure class="media-left">
+      <p class="image">
+       <img src="${game.background_image}" />
+       </p>
+       </figure>
+        <div class="media-content">
+          <div class="content">
+            <h1>${game.name}</h1>
+            <h4>${game.genres}</h4>
+            </div>
+
+       </article>
+
+       `
+};
+
+// const gameTemplate = (game) => {
+//   return `
+//   <article class="media">
+//     <figure class="media-left">
+//      <p class="image">
+//       <img src="${game.background_image}" />
+//       </p>
+//       </figure>
+//       </article>`
+// };
+
+
+// const onGameSelect = async game => {
+//   const response = await axios.get(
+//     "https://rawg-video-games-database.p.rapidapi.com/games",
+//     {
+//       headers: {
+//         "X-RapidAPI-Key": "7813177d35mshc85ddf61935f917p12ead0jsn0e2bfb81f08e",
+//         "X-RapidAPI-Host": "rawg-video-games-database.p.rapidapi.com",
+         
+//       },
+//       params: {
+//         key: "bb7842b2785541ce8a8dd7522bac4816",
+//         i: game.id,
+//       },
+//     }
+//   );
+ 
+//  console.log(response.data);
+// };
