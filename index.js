@@ -46,6 +46,7 @@ const onInput = async (event) => {
     option.innerHTML = `
         <img src="${game.background_image}" />
         <h1>${game.name}</h1>
+        
         `;
 
     resultsWrapper.appendChild(option);
@@ -54,21 +55,28 @@ const onInput = async (event) => {
 
 input.addEventListener("input", debounce(onInput, 450));
 
+//event listener to check if a click was done outside of root if yes it close dropdown with "is-active"
+document.addEventListener("click", event => {
+  if (!root.contains(event.target)) {
+    dropdown.classList.remove('is-active');
+  }
+});
+
 
 //function to sort results by rating
 const sortBy = (field, reverse, primer) => {
 
   const key = primer ?
-    function(x) {
-      return primer(x[field])
-    } :
-    function(x) {
-      return x[field]
-    };
+  function(x) {
+    return primer(x[field])
+  } :
+  function(x) {
+    return x[field]
+  };
 
-  reverse = !reverse ? 1 : -1;
+reverse = !reverse ? 1 : -1;
 
-  return function(a, b) {
-    return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
-  }
+return function(a, b) {
+  return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
+}
 }
