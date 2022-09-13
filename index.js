@@ -96,7 +96,7 @@ return function(a, b) {
 
 const onGameSelect = game => {
 
-  
+  console.log(game);
   
    document.querySelector("#summary").innerHTML = `
    <article class="media">
@@ -108,7 +108,12 @@ const onGameSelect = game => {
         <div class="media-content">
           <div class="content">
             <h1>${game.name}</h1>
-            <h4>${game.genres.map(genre => genre.name)}</h4>
+            <h5>Genres:</h5>
+            <h4>${game.genres.map(o => o.name).join(", ")}</h4>
+            <h4>ESRB: ${game.esrb_rating.name}</h4>
+            <h4>Metacritic Score: ${game.metacritic}</h4>
+            <h4>${game.platforms.map(o=>o.platform.name).join(", ")}</h4>
+            <h4>Released: ${game.released}</h4>
             </div>
 
        </article>
