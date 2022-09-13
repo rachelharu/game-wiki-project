@@ -93,9 +93,10 @@ return function(a, b) {
 };
 
 
+
 const onGameSelect = game => {
 
-  console.log(game.genres);
+  
   
    document.querySelector("#summary").innerHTML = `
    <article class="media">
@@ -107,41 +108,12 @@ const onGameSelect = game => {
         <div class="media-content">
           <div class="content">
             <h1>${game.name}</h1>
-            <h4>${game.genres}</h4>
+            <h4>${game.genres.map(genre => genre.name)}</h4>
             </div>
 
        </article>
-
        `
+     
+            
 };
-
-// const gameTemplate = (game) => {
-//   return `
-//   <article class="media">
-//     <figure class="media-left">
-//      <p class="image">
-//       <img src="${game.background_image}" />
-//       </p>
-//       </figure>
-//       </article>`
-// };
-
-
-// const onGameSelect = async game => {
-//   const response = await axios.get(
-//     "https://rawg-video-games-database.p.rapidapi.com/games",
-//     {
-//       headers: {
-//         "X-RapidAPI-Key": "7813177d35mshc85ddf61935f917p12ead0jsn0e2bfb81f08e",
-//         "X-RapidAPI-Host": "rawg-video-games-database.p.rapidapi.com",
-         
-//       },
-//       params: {
-//         key: "bb7842b2785541ce8a8dd7522bac4816",
-//         i: game.id,
-//       },
-//     }
-//   );
  
-//  console.log(response.data);
-// };
