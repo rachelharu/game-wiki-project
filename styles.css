@@ -56,7 +56,11 @@ figure.image {
   }
 
   .dropdown-menu {
-    position:relative;
+    position: relative;
+  }
+
+  .footer-tag {
+    font-size: 10px;
   }
 
  #art {
