@@ -55,4 +55,11 @@ figure.image {
     margin-right: 10px;
   }
 
- 
+  .dropdown-menu {
+    position:relative;
+  }
+
+ #art {
+    width: 250px;
+    height: 100px;
+ }

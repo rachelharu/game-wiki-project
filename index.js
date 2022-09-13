@@ -102,21 +102,33 @@ const onGameSelect = game => {
    <article class="media">
      <figure class="media-left">
       <p class="image">
-       <img src="${game.background_image}" />
+       <img id="art" src="${game.background_image}" />
        </p>
        </figure>
         <div class="media-content">
           <div class="content">
             <h1>${game.name}</h1>
-            <h5>Genres:</h5>
+            <h5>Genres: </h5>
             <h4>${game.genres.map(o => o.name).join(", ")}</h4>
-            <h4>ESRB: ${game.esrb_rating.name}</h4>
-            <h4>Metacritic Score: ${game.metacritic}</h4>
-            <h4>${game.platforms.map(o=>o.platform.name).join(", ")}</h4>
-            <h4>Released: ${game.released}</h4>
-            </div>
+            <h5>ESRB: </h5>
+            <h4>${game.esrb_rating.name}</h4>
+          </div>
+        </div>
+    </article>
+      <article class="notification is-danger"> 
+            <h5>Metacritic Score: </h5>
+            <h4>${game.metacritic}</h4>
+      </article>
+      <article class="notification is-danger"> 
+            <h5>Released: </h5>
+            <h4>${game.released}</h4>
+      </article>
+      <article class="notification is-danger"> 
+            <h5>Platforms: </h5>
+            <h4>${game.platforms.map(o => o.platform.name).join(", ")}</h4>
+      </article>     
+       
 
-       </article>
        `
      
             
