@@ -35,12 +35,12 @@ const resultsWrapper = document.querySelector(".results");
 const onInput = async (event) => {
   const games = await fetchData(event.target.value);
 
-  if (!games.length) {
+  if (!event.target.value.length) {
     dropdown.classList.remove("is-active");
-    return;
+    return; 
   }
 
-  resultsWrapper.innerHTML = " ";
+  resultsWrapper.innerHTML = "";
   dropdown.classList.add("is-active");
   for (let game of games) {
     const option = document.createElement("a");
