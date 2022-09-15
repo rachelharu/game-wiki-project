@@ -86,13 +86,8 @@ const sortBy = (field, reverse, primer) => {
   };
 };
 
-
-
-
 const onGameSelect = (game) => {
   console.log(game);
-      
- 
 
   document.querySelector("#summary").innerHTML = `
    <article class="media">
@@ -107,7 +102,9 @@ const onGameSelect = (game) => {
             <h5>Genres: </h5>
             <h4>${game.genres.map((o) => o.name).join(", ")}</h4>
             <h5>ESRB: </h5>
-            <h4>${game.esrb_rating === null ? "N/A" : game.esrb_rating.name}</h4>
+            <h4>${
+              game.esrb_rating === null ? "N/A" : game.esrb_rating.name
+            }</h4>
           </div>
         </div>
     </article>
@@ -123,17 +120,5 @@ const onGameSelect = (game) => {
             <h5>Platforms: </h5>
             <h4>${game.platforms.map((o) => o.platform.name).join(", ")}</h4>
       </article>     
-       
-
        `;
 };
-
-
-
-// const checkIt = Object.values(game).every(value =>{
-//   if (Oject.esrb_rating === null) {
-//     console.log("true");
-//   }
-//   console.log("False");
-// });
-//   checkIt;
