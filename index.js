@@ -13,8 +13,8 @@ const fetchData = async (searchTerm) => {
     }
   );
 
-  console.log(response.data.results.sort(sortBy("rating", true, parseInt)));
-  return response.data.results;
+  return response.data.results.sort(sortBy("rating", true, parseInt));
+   
 };
 
 const root = document.querySelector(".autocomplete");
@@ -32,9 +32,11 @@ const input = document.querySelector("input");
 const dropdown = document.querySelector(".dropdown");
 const resultsWrapper = document.querySelector(".results");
 
+//creates dropdown menu, when user clicks option onGameSelect will run
 const onInput = async (event) => {
   const games = await fetchData(event.target.value);
 
+  //hides dropdown menu when input field blank
   if (!event.target.value.length) {
     dropdown.classList.remove("is-active");
     return; 
@@ -60,6 +62,7 @@ const onInput = async (event) => {
   }
 };
 
+//puts a delay on input request to 450ms after typing
 input.addEventListener("input", debounce(onInput, 450));
 
 //function to close dropdown menu if user clicks outside root"
@@ -69,7 +72,7 @@ document.addEventListener("click", (event) => {
   }
 });
 
-//reusable function to sort results by rating
+//reusable function to sort results by rating from highest to lowest
 const sortBy = (field, reverse, primer) => {
   const key = primer
     ? function (x) {
@@ -86,6 +89,7 @@ const sortBy = (field, reverse, primer) => {
   };
 };
 
+// dsiplays results of game
 const onGameSelect = (game) => {
   console.log(game);
 
@@ -102,9 +106,7 @@ const onGameSelect = (game) => {
             <h5>Genres: </h5>
             <h4>${game.genres.map((o) => o.name).join(", ")}</h4>
             <h5>ESRB: </h5>
-            <h4>${
-              game.esrb_rating === null ? "N/A" : game.esrb_rating.name
-            }</h4>
+            <h4>${game.esrb_rating === null ? "N/A" : game.esrb_rating.name}</h4>
           </div>
         </div>
     </article>
