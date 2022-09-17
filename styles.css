@@ -22,7 +22,7 @@ figure.image {
   
   .notification {
     margin-top: 20px !important;
-    background-color: rgba(202, 57, 47, 0.925) !important;
+    background-color: rgba(202, 47, 47, 0.925) !important;
   }
   
   .results {
@@ -75,7 +75,7 @@ figure.image {
   animation: slideLeft 1.0s forwards;
   opacity: 0;
   transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-  color: rgba(216, 27, 27, 0.801);
+  color: rgba(211, 37, 37, 0.699);
 }
 
 .subtitle span {
