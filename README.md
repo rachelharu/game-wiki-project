@@ -5,7 +5,7 @@
 
 ## HOW IT WORKS
 
-search for your favorite game in the input bar, once youve clicked a game details will be shown about the game you chose.
+search for your favorite game in the input bar, once you've clicked a game details will be shown about the game you've chosen.
 
 ## WHAT I LEARNED
 
