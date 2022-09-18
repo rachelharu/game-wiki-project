@@ -76,7 +76,7 @@ figure.image {
   animation: slideLeft 1.0s forwards;
   opacity: 0;
   transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-  color: rgba(230, 30, 30, 0.699);
+  color: rgba(223, 15, 15, 0.767);
 }
 
 .subtitle span {
