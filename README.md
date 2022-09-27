@@ -9,18 +9,11 @@ search for your favorite game in the input bar, once you've clicked details will
 
 ## WHAT I LEARNED
 
-how to display a single value for an object in an array 
 
-` game.esrb_rating === null ? "N/A" : game.esrb_rating.name `
-
-also how to access a value in an object thats in an array instead of the entire object 
+how to access a property value in an object thats in an array
 such as here: 
 
-genres.map((o) => o.name).join(", ")
-
-which creates a new array with the desired values 
-
-example
+// used in line 107 of index.js
 
 ` let genres = 
 [
@@ -28,7 +21,7 @@ example
       "id":4,
       "name":"Action",
       "slug":"action"
-   },
+   }, 
    {
       "id":11,
       "name":"Arcade",
@@ -51,6 +44,7 @@ example
    }
 ] `
 
+` console.log(genres.map(o => o.name).join(" "));  `
 
 example of results 
 
