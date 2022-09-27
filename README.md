@@ -10,7 +10,7 @@ search for your favorite game in the input bar, once you've clicked details will
 ## WHAT I LEARNED
 
 
-how to access a property value in an object thats in an array
+how to access specific property value in an object thats in an array
 such as here: 
 
 // used in line 107 of index.js
