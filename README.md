@@ -22,7 +22,7 @@ which creates a new array with the desired values
 
 example
 
-let genres = 
+` let genres = 
 [
    {
       "id":4,
@@ -49,7 +49,7 @@ let genres =
       "name":"Massively Multiplayer",
       "slug":"massively-multiplayer"
    }
-]
+] `
 
 
 example of results 
