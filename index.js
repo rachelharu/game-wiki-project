@@ -22,9 +22,9 @@ root.innerHTML = `
   <label><b>Search</b></label>
   <input class="input" />
   <div class="dropdown">
-    <div class="dropdown-menu">
-      <div class="dropdown-content results"></div>
-    </div>
+      <div class="dropdown-menu">
+       <div class="dropdown-content results"></div>
+      </div>
   </div>
 `;
 

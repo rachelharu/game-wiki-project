@@ -15,10 +15,12 @@ figure.image {
     display: flex;
     justify-content: center;
     background-color: black;
+    
   }
   
   figure .image img {
     width: 128px;
+    border-radius: 5px;
   }
   
   .notification {
@@ -28,9 +30,9 @@ figure.image {
   
   .results {
     max-height: 500px;
-    overflow-y: scroll;
-    width: 300px;
-  
+    overflow-x: hidden;
+/*     overflow-y: hidden; */
+    max-width: 100%;
   }
   
   .title .icon {
@@ -59,6 +61,10 @@ figure.image {
 
   .dropdown-menu {
     position: relative;
+  }
+
+  .dropdown-content {
+    max-width: 100%;
   }
 
   .footer-tag {
