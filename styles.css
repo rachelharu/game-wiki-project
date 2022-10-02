@@ -69,10 +69,15 @@ figure.image {
 
   .dropdown-menu {
     position: relative;
+    width: 400px;
   }
 
   .dropdown-content {
     max-width: 100%;
+  }
+
+  .results {
+    position: absolute;
   }
 
   .footer-tag {
