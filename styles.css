@@ -23,6 +23,10 @@ figure.image {
     border-radius: 5px;
   }
   
+  .showBox {
+    animation: fadeIn 5s;
+  }
+
   .notification {
     margin-top: 20px !important;
     background-color: rgba(236, 63, 63, 0.87) !important;
@@ -46,6 +50,10 @@ figure.image {
   .forms {
     display: flex;
     justify-content: space-around;
+  }
+
+  .summary {
+    margin-top: 10px;
   }
   
   .dropdown-item {
@@ -115,4 +123,9 @@ figure.image {
     opacity: 1;
     transform: translateX(0%);
   }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }

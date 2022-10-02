@@ -140,9 +140,9 @@ let spanText = function spanText(text) {
 
 let headline = document.querySelector('.title');
 let bottomline = document.querySelector('.subtitle');
-
 spanText(headline);
 spanText(bottomline);
+
 
 
 let animations = document.querySelectorAll('.animation');
@@ -151,5 +151,6 @@ animations.forEach((animation) => {
   let letters = animation.querySelectorAll('span');
   letters.forEach((letter, i) => {
     letter.style.animationDelay = i * 0.1 + 's';
-  });
+  }); 
 });
+
