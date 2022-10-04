@@ -1,98 +1,94 @@
-
 html,
 body {
-    font-family: 'Open Sans';
-    background-color: #f7f7f7;
+  font-family: 'Open Sans';
+  background-color: #f7f7f7;
 }
 
-
 #logo {
-    padding: 5px;
-
+  padding: 5px;
 }
 
 figure.image {
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    
-  }
-  
-  figure .image img {
-    width: 128px;
-    border-radius: 5px;
-  }
-  
-  .showBox {
-    animation: fadeIn 5s;
-  }
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
 
-  .notification {
-    margin-top: 20px !important;
-    background-color: rgba(236, 63, 63, 0.87) !important;
-  }
-  
-  .results {
-    max-height: 500px;
-    overflow-x: hidden;
-/*     overflow-y: hidden; */
-    max-width: 100%;
-  }
-  
-  .title .icon {
-    margin-left: 15px;
-  }
-  
-  .hero {
-    margin-bottom: 20px;
-  }
-  
-  .forms {
-    display: flex;
-    justify-content: space-around;
-  }
+figure .image img {
+  width: 128px;
+  border-radius: 5px;
+}
 
-  .summary {
-    margin-top: 10px;
-  }
-  
-  .dropdown-item {
-    display: flex;
-    align-items: center;
-    height: 60px;
-  }
-  
-  .dropdown-item img {
-    height: 50px;
-    margin-right: 10px;
-  }
+.showBox {
+  animation: fadeIn 4s;
+}
 
-  .dropdown-menu {
-    position: relative;
-    width: 400px;
-  }
+.notification {
+  margin-top: 20px !important;
+  background-color: rgba(236, 63, 63, 0.87) !important;
+}
 
-  .dropdown-content {
-    max-width: 100%;
-  }
+.results {
+  max-height: 500px;
+  overflow-x: hidden;
+  /*     overflow-y: hidden; */
+  max-width: 100%;
+}
 
-  .results {
-    position: absolute;
-  }
+.title .icon {
+  margin-left: 15px;
+}
 
-  .footer-tag {
-    font-size: 10px;
-  }
+.hero {
+  margin-bottom: 20px;
+}
 
- #art {
-    width: 200px;
-    height: 100px;
- }
- 
+.forms {
+  display: flex;
+  justify-content: space-around;
+}
+
+.summary {
+  margin-top: 10px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+.dropdown-item img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.dropdown-menu {
+  position: relative;
+  width: 400px;
+}
+
+.dropdown-content {
+  max-width: 100%;
+}
+
+.results {
+  position: absolute;
+}
+
+.footer-tag {
+  font-size: 10px;
+}
+
+#art {
+  width: 200px;
+  height: 100px;
+}
+
 /* // for animations */
- .title span {
+.title span {
   display: inline-block;
-  animation: slideLeft 1.0s forwards;
+  animation: slideLeft 1s forwards;
   opacity: 0;
   transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   color: rgba(223, 15, 15, 0.767);
@@ -100,19 +96,16 @@ figure.image {
 
 .subtitle span {
   display: inline-block;
-  animation: 15.0s appear forwards;
+  animation: 15s appear forwards;
   opacity: 0;
   transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-  
 }
 
-
 @keyframes appear {
-  
   from {
     opacity: 0;
     transform: translateX(0%);
-  } 
+  }
   to {
     opacity: 1;
     transform: translateX(0%);
@@ -123,7 +116,7 @@ figure.image {
   from {
     opacity: 0;
     transform: translateX(200px);
-  } 
+  }
   to {
     opacity: 1;
     transform: translateX(0%);
@@ -131,6 +124,27 @@ figure.image {
 }
 
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
+
+/* hide and move */
+
+/* .flexor {
+  position: relative;
+  bottom: 115px;
+}
+
+.hide {
+  display: none;
+} */
+
+/* @media screen and (max-width: 740px) {
+ .navbar-item {
+  right: 300px;
+ }
+} */

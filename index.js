@@ -30,6 +30,8 @@ root.innerHTML = `
 const input = document.querySelector('input');
 const dropdown = document.querySelector('.dropdown');
 const resultsWrapper = document.querySelector('.results');
+const title = document.querySelector('.title');
+const subtitle = document.querySelector('.subtitle');
 
 //creates dropdown menu, when user clicks option onGameSelect will run
 const onInput = async (event) => {
@@ -54,6 +56,9 @@ const onInput = async (event) => {
     option.addEventListener('click', () => {
       dropdown.classList.remove('is-active');
       input.value = game.name;
+      // title.classList.add('hide');
+      // subtitle.classList.add('hide');
+      // root.classList.add('flexor');
       onGameSelect(game);
     });
 
