@@ -16,6 +16,26 @@ const fetchData = async (searchTerm) => {
   return response.data.results.sort(sortBy('rating', true, parseInt));
 };
 
+//function to fetch even more details about a game using its id
+const fetchDetails = async (id) => {
+  const response = await axios.get(
+    'https://rawg-video-games-database.p.rapidapi.com/games/' + id,
+    {
+      headers: {
+        'X-RapidAPI-Key': '7813177d35mshc85ddf61935f917p12ead0jsn0e2bfb81f08e',
+        'X-RapidAPI-Host': 'rawg-video-games-database.p.rapidapi.com',
+      },
+      params: {
+        key: 'bb7842b2785541ce8a8dd7522bac4816',
+      },
+    }
+     
+  );
+  console.log(response.data);
+
+};
+
+
 const root = document.querySelector('.autocomplete');
 root.innerHTML = `
   <label><b>Search</b></label>
@@ -76,27 +96,12 @@ document.addEventListener('click', (event) => {
   }
 });
 
-//reusable function to sort results by rating from highest to lowest
-const sortBy = (field, reverse, primer) => {
-  const key = primer
-    ? function (x) {
-        return primer(x[field]);
-      }
-    : function (x) {
-        return x[field];
-      };
-
-  reverse = !reverse ? 1 : -1;
-
-  return function (a, b) {
-    return (a = key(a)), (b = key(b)), reverse * ((a > b) - (b > a));
-  };
-};
 
 // dsiplays results of game
 const onGameSelect = (game) => {
+  fetchDetails(game.id);
   console.log(game);
-
+  console.log(game.id);
   document.querySelector('#summary').innerHTML = `
    <article class="media">
      <figure class="media-left">
@@ -129,6 +134,24 @@ const onGameSelect = (game) => {
             <h4>${game.platforms.map((o) => o.platform.name).join(', ')}</h4>
       </article>     
        `;
+};
+
+
+//reusable function to sort results by rating from highest to lowest
+const sortBy = (field, reverse, primer) => {
+  const key = primer
+    ? function (x) {
+        return primer(x[field]);
+      }
+    : function (x) {
+        return x[field];
+      };
+
+  reverse = !reverse ? 1 : -1;
+
+  return function (a, b) {
+    return (a = key(a)), (b = key(b)), reverse * ((a > b) - (b > a));
+  };
 };
 
 //code for title animations
