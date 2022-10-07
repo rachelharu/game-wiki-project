@@ -16,7 +16,7 @@ const fetchData = async (searchTerm) => {
   return response.data.results.sort(sortBy('rating', true, parseInt));
 };
 
-//function to fetch even more details about a game using its id
+//function to fetch even more details about a game using its id 
 const fetchDetails = async (id) => {
   const response = await axios.get(
     'https://rawg-video-games-database.p.rapidapi.com/games/' + id,
