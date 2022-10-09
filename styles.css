@@ -19,6 +19,15 @@ figure .image img {
   border-radius: 5px;
 }
 
+.navbar {
+  display: flex;
+  flex-direction: column;
+}
+
+.navInput {
+  margin-top: 1.5rem;
+}
+
 .showBox {
   animation: fadeIn 4s;
 }
@@ -134,17 +143,19 @@ figure .image img {
 
 /* hide and move */
 
-/* .flexor {
-  position: relative;
-  bottom: 115px;
-}
-
 .hide {
   display: none;
-} */
+} 
 
-/* @media screen and (max-width: 740px) {
+.hidden {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
+
+ /* @media screen and (max-width: 740px) {
  .navbar-item {
   right: 300px;
- }
-} */
+ } */

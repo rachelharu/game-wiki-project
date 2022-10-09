@@ -16,7 +16,7 @@ const fetchData = async (searchTerm) => {
   return response.data.results.sort(sortBy('rating', true, parseInt));
 };
 
-//function to fetch even more details about a game using its id 
+//function to fetch even more details about a game using its id
 const fetchDetails = async (id) => {
   const response = await axios.get(
     'https://rawg-video-games-database.p.rapidapi.com/games/' + id,
@@ -29,11 +29,13 @@ const fetchDetails = async (id) => {
         key: 'bb7842b2785541ce8a8dd7522bac4816',
       },
     }
-     
   );
-  console.log(response.data);
 
+  console.log(response.data.description_raw);
+  return response.data.description_raw;
 };
+
+
 
 
 const root = document.querySelector('.autocomplete');
@@ -47,11 +49,17 @@ root.innerHTML = `
   </div>
 `;
 
+
 const input = document.querySelector('input');
 const dropdown = document.querySelector('.dropdown');
 const resultsWrapper = document.querySelector('.results');
 const title = document.querySelector('.title');
 const subtitle = document.querySelector('.subtitle');
+const navInput = document.getElementById('nav');
+const autoComplete = document.getElementById('autoCom');
+ 
+
+
 
 //creates dropdown menu, when user clicks option onGameSelect will run
 const onInput = async (event) => {
@@ -76,10 +84,10 @@ const onInput = async (event) => {
     option.addEventListener('click', () => {
       dropdown.classList.remove('is-active');
       input.value = game.name;
-      // title.classList.add('hide');
-      // subtitle.classList.add('hide');
-      // root.classList.add('flexor');
-      onGameSelect(game);
+      title.classList.add('hide');
+      subtitle.classList.add('hide');
+      navInput.appendChild(autoComplete);
+      onGameSelect(game); 
     });
 
     resultsWrapper.appendChild(option);
@@ -96,12 +104,11 @@ document.addEventListener('click', (event) => {
   }
 });
 
-
 // dsiplays results of game
-const onGameSelect = (game) => {
+const onGameSelect = async (game) => {
   fetchDetails(game.id);
+  const yess = await fetchDetails(game.id);
   console.log(game);
-  console.log(game.id);
   document.querySelector('#summary').innerHTML = `
    <article class="media">
      <figure class="media-left">
@@ -121,6 +128,7 @@ const onGameSelect = (game) => {
           </div>
         </div>
     </article>
+            <h3>${yess }</h3>
       <article class="notification is-danger"> 
             <h5>Metacritic Score: </h5>
             <h4>${game.metacritic === null ? 'N/A' : game.metacritic}</h4>
@@ -135,7 +143,6 @@ const onGameSelect = (game) => {
       </article>     
        `;
 };
-
 
 //reusable function to sort results by rating from highest to lowest
 const sortBy = (field, reverse, primer) => {
@@ -171,14 +178,11 @@ let bottomline = document.querySelector('.subtitle');
 spanText(headline);
 spanText(bottomline);
 
-
-
 let animations = document.querySelectorAll('.animation');
 
 animations.forEach((animation) => {
   let letters = animation.querySelectorAll('span');
   letters.forEach((letter, i) => {
     letter.style.animationDelay = i * 0.1 + 's';
-  }); 
+  });
 });
-
