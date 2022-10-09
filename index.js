@@ -40,7 +40,7 @@ const fetchDetails = async (id) => {
 
 const root = document.querySelector('.autocomplete');
 root.innerHTML = `
-  <label><b>Search</b></label>
+  <label><b class="inputTag">Search</b></label>
   <input class="input" />
   <div class="dropdown">
       <div class="dropdown-menu">
@@ -57,7 +57,7 @@ const title = document.querySelector('.title');
 const subtitle = document.querySelector('.subtitle');
 const navInput = document.getElementById('nav');
 const autoComplete = document.getElementById('autoCom');
- 
+const inputTag = document.querySelector('.inputTag');
 
 
 
@@ -87,6 +87,8 @@ const onInput = async (event) => {
       title.classList.add('hide');
       subtitle.classList.add('hide');
       navInput.appendChild(autoComplete);
+      inputTag.classList.add('hide');
+      input.classList.add('inputMargin');
       onGameSelect(game); 
     });
 

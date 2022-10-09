@@ -1,7 +1,7 @@
 html,
 body {
   font-family: 'Open Sans';
-  background-color: #f7f7f7;
+  background-color: #181818;
 }
 
 #logo {
@@ -28,8 +28,26 @@ figure .image img {
   margin-top: 1.5rem;
 }
 
+.subtitle, .inputTag {
+  color: rgb(185, 179, 170);
+}
+
+.input:hover {
+  border-color: rgb(69, 75, 78);
+}
+
+.input, .select select, .textarea {
+  background-color: rgb(24, 26, 27);
+  border-color: rgb(58, 63, 65);
+  color: rgb(198, 193, 185);
+}
+
 .showBox {
   animation: fadeIn 4s;
+}
+
+.input {
+  background-color: #181818;
 }
 
 .notification {
@@ -57,14 +75,24 @@ figure .image img {
   justify-content: space-around;
 }
 
-.summary {
-  margin-top: 10px;
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+  color: rgb(198, 193, 185);
+}
+
+#summary {
+  color: rgb(198, 193, 185);B !important;
 }
 
 .dropdown-item {
   display: flex;
   align-items: center;
   height: 60px;
+  color: rgb(226, 223, 219);
+}
+
+a.dropdown-item:hover, button.dropdown-item:hover {
+  background-color: rgb(30, 32, 33);
+  color: rgb(226, 223, 219);
 }
 
 .dropdown-item img {
@@ -79,6 +107,9 @@ figure .image img {
 
 .dropdown-content {
   max-width: 100%;
+  color: rgb(185, 179, 170);
+  background-color: rgb(24, 26, 27);
+  box-shadow: rgb(8 8 8 / 10%) 0px 0.5em 1em -0.125em, rgb(8 8 8 / 2%) 0px 0px 0px 1px;
 }
 
 .results {
@@ -93,6 +124,22 @@ figure .image img {
   width: 200px;
   height: 100px;
 }
+
+/* scrollbar  */
+::-webkit-scrollbar {
+  background-color: #202324;
+  color: #aba499;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #181a1b;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #454a4d;
+}
+
+
 
 /* // for animations */
 .title span {
@@ -141,7 +188,7 @@ figure .image img {
   }
 }
 
-/* hide and move */
+/* hide/transform */
 
 .hide {
   display: none;
@@ -153,6 +200,10 @@ figure .image img {
 
 .show {
   visibility: visible;
+}
+
+.inputMargin {
+  margin-top: 10px;
 }
 
  /* @media screen and (max-width: 740px) {
