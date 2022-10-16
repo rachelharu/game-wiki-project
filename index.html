@@ -1,79 +1,93 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>game wiki project</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
     />
-    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link
+      rel="shortcut icon"
+      href="../images/fav_icon.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
     <!-- Bulma Version 0.9.0-->
-    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
-    
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/carousel/carousel.css" />
     <link rel="stylesheet" href="/styles.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="hero is-fullheight is-default is-bold">
-        <div class="hero-head">
-            <nav class="navbar" >
-                <div class="container" id="nav">
-                    <div class="navbar-brand">
-                        <a class="navbar-item" href="../">
-                            <img id="logo" src="/images/game-control.png" alt="Logo">        
-                                                   
-                        </a>                            
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <div class="columns is-vcentered">
-                    <div class="column is-6 is-offset-3">
-                        <div class="wrapper">
-                        <h1 class="title is-2 animation">
-                            game lookup
-                        </h1>
-                        <h2 class="subtitle is-4 animationSecond">
-                            find info about your favorite games 
-                        </h2> 
-                        </div>
-                            <div class="container showBox"> 
-                              <div class="autocomplete" id="autoCom"></div>
-                              <div id="summary"></div> 
-                            </div>        
-                        <div class="column is-4by4 is-hidden">
-                            <figure class="image is-1by1">
-                                <img src="https://picsum.photos/800/600/?random" alt="Description">
-                            </figure>
-                        </div>
-                    </div>
-                </div>
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container" id="nav">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="../">
+                <img id="logo" src="/images/game-control.png" alt="Logo" />
+              </a>
             </div>
+          </div>
+        </nav>
+      </div>
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <div class="columns is-vcentered">
+            <div class="column is-6 is-offset-3">
+              <div class="wrapper">
+                <h1 class="title is-2 animation">game lookup</h1>
+                <h2 class="subtitle is-4 animationSecond">
+                  find info about your favorite games
+                </h2>
+              </div>
+              <div class="container showBox">
+                <div class="autocomplete" id="autoCom"></div>
+                <div id="summary"></div>
+              </div>
+              <div class="column is-4by4 is-hidden">
+                <figure class="image is-1by1">
+                  <img
+                    src="https://picsum.photos/800/600/?random"
+                    alt="Description"
+                  />
+                </figure>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      
 
-        <div class="hero-foot">
-            <div class="container">
-                <div class="tabs is-centered">
-                    <ul>
-                        <li><a class="footer-tag" href="https://rawg.io/" target="_blank">powered by RAWG</a></li>
-                    </ul>
-                </div>
-            </div>
+      <div class="hero-foot">
+        <div class="container">
+          <div class="tabs is-centered">
+            <ul>
+              <li>
+                <a class="footer-tag" href="https://rawg.io/" target="_blank"
+                  >powered by RAWG</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
     </section>
-
-<script src="utils.js"></script>
-<script src="index.js"></script>
-</body>
-
+    <script src="utils.js"></script>
+    <script src="index.js"></script>
+  </body>
 </html>
-
