@@ -105,9 +105,12 @@ document.addEventListener('click', (event) => {
 // passes game id to details function to show results
 const onGameSelect = async (game) => {
   console.log(game);
+  const offset = document.querySelector('#offset');
+  // offset.classList.remove('is-offset-3');
+  // offset.classList.add('is-offset-2');
+
   details(id);
 };
-
 
 const details = async (id) => {
   const description = id.description_raw;
@@ -124,21 +127,73 @@ const details = async (id) => {
             <h1>${id.name}</h1>
             <h5>Genres: </h5>
             <h4>${id.genres.map((o) => o.name).join(', ')}</h4>
-            <h5>ESRB: </h5>
-            <h4>${id.esrb_rating === null ? 'N/A' : id.esrb_rating.name}</h4>
           </div>
         </div>
     </article>
-            <h3 id="description">${description.split('.', 2).join('.')}</h3>
-      <article class="notification is-danger"> 
-            <h5><a href=${metaUrl}>Metacritic Score:</a></h5>
-            <h4>${id.metacritic === null ? 'N/A' : id.metacritic}</h4>
+
+
+      <div class="card">
+        <div class="card-content">
+          <div class="content">
+              <h3 id="description">${description.split('.', 2).join('.')}</h3>
+          </div>
+        </div>
+      </div>
+
+      <section class="dev-hero">
+      <div class="hero-body">
+        <p class="herotitle" id="hero-title">
+          Publisher:
+        </p>
+        <p class="dev-subtitle">
+          ${id.publishers[0].name}
+         </p>
+         <p class="herotitle" id="hero-title">
+        Developers: 
+      </p>
+      <p class="dev-subtitle">
+        ${id.developers.map((o) => o.name).join(', ')}
+       </p>
+      </div>
+      </section>
+
+
+      <nav class="level">
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">ESRB:</p>
+            <p class="title">${
+              id.esrb_rating === null ? 'N/A' : id.esrb_rating.name
+            }</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Released:</p>
+            <p class="title">${id.released}</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading"><a href=${metaUrl}>Metacritic Score:</a></p>
+            <p class="title">${
+              id.metacritic === null ? 'N/A' : id.metacritic
+            }</p>
+          </div>
+        </div>
+      </nav>
+
+      <article class="message">
+        <div class="message-header">
+          <p>About</p>
+        </div>
+        <div class="message-body">
+          ${description}
+        </div>
       </article>
-      <article class="notification is-danger"> 
-            <h5>Released: </h5>
-            <h4>${id.released}</h4>
-      </article>
-      <article class="notification is-danger"> 
+     
+     
+      <article class="notification "> 
             <h5>Platforms: </h5>
             <h4>${id.platforms.map((o) => o.platform.name).join(', ')}</h4>
       </article>     
