@@ -155,6 +155,18 @@ const details = async (id) => {
       </section>
 
 
+      
+
+      <article class="message">
+        <div class="message-header">
+          <p>About</p>
+        </div>
+        <div class="message-body">
+          ${description}
+        </div>
+      </article>
+     
+
       <nav class="level">
         <div class="level-item has-text-centered">
           <div>
@@ -179,16 +191,6 @@ const details = async (id) => {
           </div>
         </div>
       </nav>
-
-      <article class="message">
-        <div class="message-header">
-          <p>About</p>
-        </div>
-        <div class="message-body">
-          ${description}
-        </div>
-      </article>
-     
      
       <article class="notification "> 
             <h5>Platforms: </h5>

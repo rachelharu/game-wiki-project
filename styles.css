@@ -146,6 +146,7 @@ nav .title{
 
 #summary {
   color: #e4e6eb;
+  font-family: 'Open Sans';
 }
 
 .dropdown-item {
@@ -189,7 +190,7 @@ button.dropdown-item:hover {
 
 #art {
   width: 250px;
-  /* height: 150px; */
+  height: 150px;
 }
 
 /* scrollbar  */
