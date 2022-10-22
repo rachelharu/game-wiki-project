@@ -105,10 +105,6 @@ document.addEventListener('click', (event) => {
 // passes game id to details function to show results
 const onGameSelect = async (game) => {
   console.log(game);
-  const offset = document.querySelector('#offset');
-  // offset.classList.remove('is-offset-3');
-  // offset.classList.add('is-offset-2');
-
   details(id);
 };
 

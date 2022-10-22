@@ -266,7 +266,10 @@ button.dropdown-item:hover {
   margin-top: 10px;
 }
 
-/* @media screen and (max-width: 740px) {
- .navbar-item {
-  right: 300px;
- } */
+@media screen and (max-width: 640px) {
+  #art {
+    width: 200px;
+    height: 100px;
+  }
+
+}
