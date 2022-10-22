@@ -134,7 +134,8 @@ const details = async (id) => {
               <h3 id="description">${description.split('.', 2).join('.')}</h3>
           </div>
         </div>
-      </div>
+        </div>
+
 
       <section class="dev-hero">
       <div class="hero-body">
@@ -193,7 +194,9 @@ const details = async (id) => {
             <h5>Platforms: </h5>
             <h4>${id.platforms.map((o) => o.platform.name).join(', ')}</h4>
       </article>     
-       `;
+      `;
+
+       
 };
 
 //reusable function to sort results by rating from highest to lowest

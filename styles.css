@@ -16,7 +16,7 @@ figure.image {
 }
 
 figure .image img {
-  width: 128px;
+  /* width: 128px; */
   border-radius: 5px;
 }
 
@@ -123,6 +123,11 @@ figure .image img {
 
 .dev-hero {
   margin-bottom: 20px;
+  display: inline-block;
+}
+
+nav .title{
+  padding-right: 10px;
 }
 
 .forms {
@@ -183,8 +188,8 @@ button.dropdown-item:hover {
 }
 
 #art {
-  width: 300px;
-  height: 150px;
+  width: 250px;
+  /* height: 150px; */
 }
 
 /* scrollbar  */
@@ -270,6 +275,50 @@ button.dropdown-item:hover {
   #art {
     width: 200px;
     height: 100px;
+    margin-bottom: 10px;
   }
 
+  .dev-hero {
+    display: inline-block !important;
+    margin-bottom: 0px;
+  }
+  .hero-body {
+    display: inline-block !important;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  #art {
+    width: 200px;
+    height: 100px;
+  }
+
+  #hero-title {
+    margin-right: 0px;
+  }
+
+  .dev-subtitle {
+    margin-right: 0px;
+  }
+
+  .dev-hero {
+    display: inline-block !important;
+  }
+  .hero-body {
+    display: inline-block !important;
+  }
+
+  .media, .media-left {
+    display: inline-block;
+  }
+
+  .media-left {
+    margin-right: 0px;
+  }
+
+  .media-content {
+    margin-left: 0px;
+  }
+  
 }
