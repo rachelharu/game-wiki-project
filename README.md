@@ -54,4 +54,5 @@ Action, Arcade, Simulation, Indie, Massively Multiplayer
 ## THINGS TO DO
 
 - ~~improve dropdown box styling~~
-- possibly make results styling look prettier.
+- ~~possibly make results styling look prettier.~~
+- implement a howlongtobeat section 
