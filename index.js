@@ -84,8 +84,11 @@ const onInput = async (event) => {
       navInput.appendChild(autoComplete);
       inputTag.classList.add('hide');
       input.classList.add('inputMargin');
-      onGameSelect(game);
       fetchDetails(game.id);
+      onGameSelect(game);
+      if (dropdown.classList === ('is-active')) {
+        dropdown.classList.remove('is-active');
+      }
     });
 
     resultsWrapper.appendChild(option);

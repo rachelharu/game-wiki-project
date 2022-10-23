@@ -218,7 +218,7 @@ button.dropdown-item:hover {
 
 .subtitle span {
   display: inline-block;
-  animation: 10s appear forwards;
+  animation: 9s appear forwards;
   opacity: 0;
   transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
