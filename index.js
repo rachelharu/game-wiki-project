@@ -47,6 +47,7 @@ root.innerHTML = `
   </div>
 `;
 
+
 const input = document.querySelector('input');
 const dropdown = document.querySelector('.dropdown');
 const resultsWrapper = document.querySelector('.results');
@@ -105,11 +106,14 @@ document.addEventListener('click', (event) => {
   }
 });
 
+
 // passes game id to details function to show results
 const onGameSelect = async (game) => {
   console.log(game);
   details(id);
 };
+
+
 
 const details = async (id) => {
   const description = id.description_raw;
@@ -158,7 +162,30 @@ const details = async (id) => {
       </section>
 
 
-      
+      <nav class="level">
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">ESRB:</p>
+          <p class="title">${
+            id.esrb_rating === null ? 'N/A' : id.esrb_rating.name
+          }</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Released:</p>
+          <p class="title">${id.released}</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading"><a href=${metaUrl}>Metacritic Score:</a></p>
+          <p class="title">${
+            id.metacritic === null ? 'N/A' : id.metacritic
+          }</p>
+        </div>
+      </div>
+    </nav>
 
       <article class="message">
         <div class="message-header">
@@ -170,30 +197,7 @@ const details = async (id) => {
       </article>
      
 
-      <nav class="level">
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading">ESRB:</p>
-            <p class="title">${
-              id.esrb_rating === null ? 'N/A' : id.esrb_rating.name
-            }</p>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading">Released:</p>
-            <p class="title">${id.released}</p>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading"><a href=${metaUrl}>Metacritic Score:</a></p>
-            <p class="title">${
-              id.metacritic === null ? 'N/A' : id.metacritic
-            }</p>
-          </div>
-        </div>
-      </nav>
+
      
       <article class="notification "> 
             <h5>Platforms: </h5>
