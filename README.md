@@ -55,4 +55,7 @@ Action, Arcade, Simulation, Indie, Massively Multiplayer
 
 - ~~improve dropdown box styling~~
 - ~~possibly make results styling look prettier.~~
-- implement a howlongtobeat section 
+
+
+ # Acknowledgements:
+made with api RAWG
