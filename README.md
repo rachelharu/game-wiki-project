@@ -1,6 +1,6 @@
 # game lookup
 
- a game wiki that uses html, css, javascript, bulma, and rawg api to deliver details about video games right at your fingertips.
+ a game wiki that uses html, css, javascript, bulma, and rawg api to deliver details about video games.
 
 
 ## HOW IT WORKS
