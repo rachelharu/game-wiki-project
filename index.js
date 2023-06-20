@@ -1,3 +1,13 @@
+const navInput = document.getElementById('nav');
+const autoComplete = document.getElementById('autoCom');
+const input = document.querySelector('input');
+const dropdown = document.querySelector('.dropdown');
+const resultsWrapper = document.querySelector('.results');
+const title = document.querySelector('.title');
+const subtitle = document.querySelector('.subtitle');
+const inputTag = document.querySelector('.inputTag');
+
+
 const fetchData = async (searchTerm) => {
   const response = await axios.get(
     'https://rawg-video-games-database.p.rapidapi.com/games',
@@ -47,16 +57,6 @@ root.innerHTML = `
   </div>
 `;
 
-
-const input = document.querySelector('input');
-const dropdown = document.querySelector('.dropdown');
-const resultsWrapper = document.querySelector('.results');
-const title = document.querySelector('.title');
-const subtitle = document.querySelector('.subtitle');
-const navInput = document.getElementById('nav');
-const autoComplete = document.getElementById('autoCom');
-const inputTag = document.querySelector('.inputTag');
-
 //creates dropdown menu, when user clicks option onGameSelect will run
 const onInput = async (event) => {
   const games = await fetchData(event.target.value);
@@ -66,12 +66,10 @@ const onInput = async (event) => {
     dropdown.classList.remove('is-active');
     return;
   }
-
   resultsWrapper.innerHTML = '';
   dropdown.classList.add('is-active');
   for (let game of games) {
     const option = document.createElement('a');
-
     option.classList.add('dropdown-item');
     option.innerHTML = `
         <img src="${game.background_image}" />
@@ -91,14 +89,12 @@ const onInput = async (event) => {
         dropdown.classList.remove('is-active');
       }
     });
-
     resultsWrapper.appendChild(option);
   }
 };
 
 //puts a delay on input request to 450ms after typing
 input.addEventListener('input', debounce(onInput, 450));
-
 //function to close dropdown menu if user clicks outside root"
 document.addEventListener('click', (event) => {
   if (!root.contains(event.target)) {
@@ -106,14 +102,11 @@ document.addEventListener('click', (event) => {
   }
 });
 
-
 // passes game id to details function to show results
 const onGameSelect = async (game) => {
   console.log(game);
   details(id);
 };
-
-
 
 const details = async (id) => {
   const description = id.description_raw;
@@ -217,9 +210,7 @@ const sortBy = (field, reverse, primer) => {
     : function (x) {
         return x[field];
       };
-
-  reverse = !reverse ? 1 : -1;
-
+    reverse = !reverse ? 1 : -1;
   return function (a, b) {
     return (a = key(a)), (b = key(b)), reverse * ((a > b) - (b > a));
   };
